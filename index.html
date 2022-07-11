@@ -1,0 +1,675 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>술트럭 파티 (Sooltluck Party)</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="81da0826-7fd0-43ee-8016-97221cc57cbf" class="page sans"><header><img class="page-cover-image" src="https://moplqfgeemqv2103108.cdn.ntruss.com/service/165121776_17a19af521b74fdbab948a69180b5b8b.jpg?type=m&amp;w=900&amp;h=900&amp;autorotate=true&amp;quality=90" style="object-position:center 50%"/><h1 class="page-title">술트럭 파티 (Sooltluck Party)</h1></header><div class="page-body"><div id="a173955f-f237-45e6-ae1f-6c703b8c96ad" class="column-list"><div id="4c6b6cba-5e58-42ff-9036-db1e3fd1d285" style="width:50%" class="column"><p id="39479eee-26d2-4a3a-a532-7bf09bcb31f7" class="">2020년 6월 27일, <code>술을 비웁니다</code> 파티 이후로 제가 다시 술을 풉니다. 수도원 맥주부터 독특한 전통주까지.</p><p id="4bd3d0af-98db-461b-b3d4-795f948fd91c" class="">이번에는 제가 가진 술로는 모자랄 것 같아서 파티에 오시는 분들도 술을 한 병씩 가지고 오는 <code>🍷술트럭 파티</code>를 하기로 했어요. 각자 좋아하는 술을 나누고 즐기는 자리를 준비해볼게요.</p><p id="edd121d9-02b4-48e9-9135-92fe33368f5b" class="">
+</p></div><div id="9fd4d446-5496-4639-8321-5bfb9ff77e7c" style="width:50%" class="column"><figure id="33655054-4f6b-4589-8ba5-31a6ffc8a395" class="image"><a href="%E1%84%89%E1%85%AE%E1%86%AF%E1%84%90%E1%85%B3%E1%84%85%E1%85%A5%E1%86%A8%20%E1%84%91%E1%85%A1%E1%84%90%E1%85%B5%20(Sooltluck%20Party)%20336550544f6b45898ba531a6ffc8a395/Untitled.png"><img style="width:900px" src="%E1%84%89%E1%85%AE%E1%86%AF%E1%84%90%E1%85%B3%E1%84%85%E1%85%A5%E1%86%A8%20%E1%84%91%E1%85%A1%E1%84%90%E1%85%B5%20(Sooltluck%20Party)%20336550544f6b45898ba531a6ffc8a395/Untitled.png"/></a></figure><p id="0abe1a9e-0203-48f8-85ea-313f3dc5cc55" class="">
+</p></div></div><div id="7afe0064-df53-4011-8ead-d50f729fc5bb" class="column-list"><div id="99841ee8-6628-42a3-87a9-a0fef9ce150a" style="width:50%" class="column"><figure id="502dad4c-0d5f-4786-b0f2-814f22eca79d" class="image"><a href="%E1%84%89%E1%85%AE%E1%86%AF%E1%84%90%E1%85%B3%E1%84%85%E1%85%A5%E1%86%A8%20%E1%84%91%E1%85%A1%E1%84%90%E1%85%B5%20(Sooltluck%20Party)%20336550544f6b45898ba531a6ffc8a395/Untitled%201.png"><img style="width:900px" src="%E1%84%89%E1%85%AE%E1%86%AF%E1%84%90%E1%85%B3%E1%84%85%E1%85%A5%E1%86%A8%20%E1%84%91%E1%85%A1%E1%84%90%E1%85%B5%20(Sooltluck%20Party)%20336550544f6b45898ba531a6ffc8a395/Untitled%201.png"/></a></figure></div><div id="45418531-eedb-4c8f-a675-02cefcdde8c3" style="width:50%" class="column"><ul id="7f529ac6-dc3f-4c87-8772-9bc99110ba11" class="bulleted-list"><li style="list-style-type:disc"><strong>날짜 : 8월 27일(토) PM 6:30 ~ 취할 때까지</strong></li></ul><ul id="94fae4cf-545e-4de1-a566-7417ca65e6f0" class="bulleted-list"><li style="list-style-type:disc"><strong>장소 : 양재창고(서초구 양재동 269-3)</strong></li></ul><ul id="fbc5cdf6-8a1a-4ed7-989a-b4eeae68c52e" class="bulleted-list"><li style="list-style-type:disc"><strong>오시는 방법 : </strong><strong><a href="https://map.naver.com/v5/directions/14141361.10625251,4506864.533875588,%EC%96%91%EC%9E%AC%EC%97%AD,342,SUBWAY_STATION/14142454.07440896,4505602.132876519,%EC%96%91%EC%9E%AC%EC%B0%BD%EA%B3%A0,1739815086,PLACE_POI/-/transit/0?c=14141528.9931812,4506289.7006486,15,0,0,0,dh">양재역에서 버스로 이동</a></strong></li></ul><ul id="55533102-f214-466f-b70c-e08be4e229a8" class="bulleted-list"><li style="list-style-type:disc"><strong>초대 인원 : 8명</strong></li></ul><ul id="e764b04e-17e6-47f4-8866-6a5c8c843cb9" class="bulleted-list"><li style="list-style-type:disc"><strong>참가비 : 2만원(대관비, 소량의 다과) + 술 한병</strong></li></ul><ul id="92771ee8-da42-4f0b-901c-aa712f0a6967" class="bulleted-list"><li style="list-style-type:disc"><strong>참가용 주류 : 편의점 냉장고에 있는 술은 제외</strong></li></ul><p id="b3b103b5-483a-4864-b472-eccad4bbac67" class="">
+</p></div></div><div id="1c7e7d2e-1ee1-4bcc-abea-889859a5313a" class="column-list"><div id="37433f8c-1e97-4216-96ef-bb6ce5c3a51d" style="width:50%" class="column"><p id="0be52a6e-1678-41a1-82ee-961b419becf3" class="">보고 계신 사진의 장소가 술트럭 파티를 할 양재창고 입니다.  넓지는 않지만 오붓하게 놀기에는 더할 나위없이 좋답니다.</p><p id="20758ad3-3a2d-4a83-94aa-aab5f97b21ff" class="">작은 이벤트도 준비해봤습니다. 참가용 주류 중 <code>✌️두번째로 비싼 술</code>을 가지고 오신 분에게는 상품을 드릴 예정입니다. 두번째인 이유는 너무 비싼 걸 가지고 오실까봐 ㅎㅎㅎ 그리고 <code>💰가장 저렴한 술</code>을 가지고 오신 분에게는 벌칙이 있답니다. </p><p id="c0fa6389-7839-4141-b374-e90784227528" class="">
+</p></div><div id="3b755fbc-c73a-4584-978b-929fa72c4c08" style="width:50%" class="column"><figure id="6eaeec33-975a-4db0-b025-c32379cb72c4" class="image"><a href="%E1%84%89%E1%85%AE%E1%86%AF%E1%84%90%E1%85%B3%E1%84%85%E1%85%A5%E1%86%A8%20%E1%84%91%E1%85%A1%E1%84%90%E1%85%B5%20(Sooltluck%20Party)%20336550544f6b45898ba531a6ffc8a395/Untitled%202.png"><img style="width:900px" src="%E1%84%89%E1%85%AE%E1%86%AF%E1%84%90%E1%85%B3%E1%84%85%E1%85%A5%E1%86%A8%20%E1%84%91%E1%85%A1%E1%84%90%E1%85%B5%20(Sooltluck%20Party)%20336550544f6b45898ba531a6ffc8a395/Untitled%202.png"/></a></figure></div></div><div id="6122baf3-02ba-46b6-b642-a5fb76e07822" class="column-list"><div id="17ff7e80-a396-4817-b35e-eaebebc0ab9d" style="width:50%" class="column"><figure id="c14513ba-b6b1-495b-812c-40540f9c91dc" class="image"><a href="%E1%84%89%E1%85%AE%E1%86%AF%E1%84%90%E1%85%B3%E1%84%85%E1%85%A5%E1%86%A8%20%E1%84%91%E1%85%A1%E1%84%90%E1%85%B5%20(Sooltluck%20Party)%20336550544f6b45898ba531a6ffc8a395/%E1%84%8C%E1%85%AE%E1%84%85%E1%85%B2%E1%84%87%E1%85%A1%E1%86%A8%E1%84%85%E1%85%A1%E1%86%B7%E1%84%92%E1%85%AC_%E1%84%8C%E1%85%A5%E1%86%AB%E1%84%85%E1%85%B5%E1%84%91%E1%85%AE%E1%86%B7.jpeg"><img style="width:1080px" src="%E1%84%89%E1%85%AE%E1%86%AF%E1%84%90%E1%85%B3%E1%84%85%E1%85%A5%E1%86%A8%20%E1%84%91%E1%85%A1%E1%84%90%E1%85%B5%20(Sooltluck%20Party)%20336550544f6b45898ba531a6ffc8a395/%E1%84%8C%E1%85%AE%E1%84%85%E1%85%B2%E1%84%87%E1%85%A1%E1%86%A8%E1%84%85%E1%85%A1%E1%86%B7%E1%84%92%E1%85%AC_%E1%84%8C%E1%85%A5%E1%86%AB%E1%84%85%E1%85%B5%E1%84%91%E1%85%AE%E1%86%B7.jpeg"/></a></figure></div><div id="60e19431-6d62-44c9-a00e-ee68880bcff3" style="width:50%" class="column"><p id="5e9c2fd6-89b0-4428-bc60-cfd4ce92ce37" class="">참가를 원하는 분들은 저에게 카톡, DM등을 남겨주시면 참가비를 보낼 계좌번호를 알려드릴게요.</p><p id="427ab5a8-b8aa-4e61-a9fd-0c6833ff3606" class=""><code>주최자 연락처 : 010-5197-5421</code></p><p id="065f0c6d-f380-4238-a6cd-80fb8773ec18" class="">
+</p><p id="9dffdcb2-ff3e-4f00-813c-cf244b60f8d2" class="">이건 아직 결정된건 아닌데요. ☀️낮에 여유있는 분들이 많으시면 <span style="border-bottom:0.05em solid"><strong>남대문 주류시장</strong></span> 혹은 <span style="border-bottom:0.05em solid"><strong>잠실 보틀벙커</strong></span>를 가보려고 해요. 참가하실 분들은 낮에 여유가 되시는지도 알려주세요.</p><p id="4ffbcccf-3570-4cf3-aeb8-80da3a805925" class="">참가비는 대부분 대관비로 사용됩니다. 그래서 상황에 따라 파티 중 비용을 추가로 걷을 수 있습니다. 하지만 제 술(왼쪽 사진)로 뽕을 뽑게 해 줄게요.</p><p id="735c105b-aba8-4a10-8c2a-8d4262f5fba4" class="">📸인스타각도 나오고 🍻술도 마시고 🤪영양가없는 아무말 대잔치도 함께 해봐요.</p><p id="c1ae8779-37c8-41cd-ae3b-cb51b7ecad63" class="">
+</p></div></div></div></article></body></html>
