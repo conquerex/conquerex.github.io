@@ -1,10 +1,15 @@
 # 술트럭 파티 (Sooltluck Party)
 
+<div class="pull-left">
 2020년 6월 27일, `술을 비웁니다` 파티 이후로 제가 다시 술을 풉니다. 수도원 맥주부터 독특한 전통주까지.
 
 이번에는 제가 가진 술로는 모자랄 것 같아서 파티에 오시는 분들도 술을 한 병씩 가지고 오는 `🍷술트럭 파티`를 하기로 했어요. 각자 좋아하는 술을 나누고 즐기는 자리를 준비해볼게요.
+</div>
+<div class="pull-right">
+![Untitled](https://t1.daumcdn.net/cfile/tistory/99704A3359C5D8CF07)
+</div>
 
-![Untitled](%E1%84%89%E1%85%AE%E1%86%AF%E1%84%90%E1%85%B3%E1%84%85%E1%85%A5%E1%86%A8%20%E1%84%91%E1%85%A1%E1%84%90%E1%85%B5%20(Sooltluck%20Party)%20336550544f6b45898ba531a6ffc8a395/Untitled.png)
+
 
 ![Untitled](%E1%84%89%E1%85%AE%E1%86%AF%E1%84%90%E1%85%B3%E1%84%85%E1%85%A5%E1%86%A8%20%E1%84%91%E1%85%A1%E1%84%90%E1%85%B5%20(Sooltluck%20Party)%20336550544f6b45898ba531a6ffc8a395/Untitled%201.png)
 
