@@ -52,10 +52,9 @@
 
       function setCookie(head_value, tail_value) {
         alert('setCookie...')
-        let todayDate = new Date();
-        todayDate.setDate(todayDate.getDate() + (24 * 60 * 60 * 1000));
-        document.cookie = 'head=' + escape(head_value) + '; tail=' + escape(tail_value) + '; path=/; expires=' + todayDate.toGMTString() + '; domain=example.com;';
-        alert('setCookie... done >>> ' + document.cookie)
+        document.cookie = "head=" + head_value;
+        document.cookie = "tail=" + tail_value;
+        alert('setCookie... done --- ' + document.cookie)
       }
 
       function getCookie(cookie_name) {
