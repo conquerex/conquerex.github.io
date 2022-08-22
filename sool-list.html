@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+  html {
+    box-sizing: border-box;
+    height: 100%;
+    font-size: 10px;
+  }
+
+  *, *::before, *::after {
+    box-sizing: inherit;
+  }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #57bd84;
+  }
+
+  input[type=checkbox] {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+  }
+  input[type=checkbox]:checked + label:after {
+    transform: scale(4.2);
+  }
+
+  label {
+    outline: none;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    color: #000;
+    font-family: "Lato", sans-serif;
+    font-size: 2.5rem;
+    letter-spacing: 0.04rem;
+    padding: 1.5rem 3rem;
+    cursor: pointer;
+    border-radius: 0.4rem;
+    border: 0.3rem solid #000;
+    background: #fff;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 3px 0 0 #000;
+  }
+  label::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform: scale(0);
+    transition: transform 0.3s ease-in;
+    mix-blend-mode: difference;
+    background: radial-gradient(circle at center, #fff 24%, #000 25%, #000 100%);
+  }
+  label:active {
+    top: 3px;
+    box-shadow: none;
+  }
+
+</style>
+</head>
+<body>
+
+<input type="checkbox" id="cb0" /><label for="cb0">그리고리</label>
+<input type="checkbox" id="cb1" /><label for="cb1">에메리타</label>
+<input type="checkbox" id="cb2" /><label for="cb2">나오야</label>
+<input type="checkbox" id="cb3" /><label for="cb3">쟤시켜알바</label>
+<input type="checkbox" id="cb4" /><label for="cb4">금정신니</label>
+<input type="checkbox" id="cb5" /><label for="cb5">로저스</label>
+<input type="checkbox" id="cb6" /><label for="cb6">크레이머</label>
+<input type="checkbox" id="cb7" /><label for="cb7">야고파</label>
+<input type="checkbox" id="cb8" /><label for="cb8">재미</label>
+<input type="checkbox" id="cb9" /><label for="cb9">샤히라</label>
+<input type="checkbox" id="cb10" /><label for="cb10">스쿤사</label>
+<input type="checkbox" id="cb11" /><label for="cb11">파닥</label>
+<input type="checkbox" id="cb12" /><label for="cb12">마사토</label>
+<input type="checkbox" id="cb13" /><label for="cb13">길미</label>
+<input type="checkbox" id="cb14" /><label for="cb14">시흐바트</label>
+<input type="checkbox" id="cb15" /><label for="cb15">카프라리우스</label>
+<input type="checkbox" id="cb16" /><label for="cb16">깝군</label>
+<input type="checkbox" id="cb17" /><label for="cb17">세라</label>
+<input type="checkbox" id="cb18" /><label for="cb18">에이도테</label>
+<input type="checkbox" id="cb19" /><label for="cb19">신노스케</label>
+<input type="checkbox" id="cb20" /><label for="cb20">앨런</label>
+<input type="checkbox" id="cb21" /><label for="cb21">아이유</label>
+<input type="checkbox" id="cb22" /><label for="cb22">데이몬</label>
+<input type="checkbox" id="cb23" /><label for="cb23">베일라</label>
+<input type="checkbox" id="cb24" /><label for="cb24">디오니시오스</label>
+<input type="checkbox" id="cb25" /><label for="cb25">판도라</label>
+<input type="checkbox" id="cb26" /><label for="cb26">바나비</label>
+<input type="checkbox" id="cb27" /><label for="cb27">초장</label>
+<input type="checkbox" id="cb28" /><label for="cb28">질리언</label>
+<input type="checkbox" id="cb29" /><label for="cb29">아달버트</label>
+
+</body>
+</html> 
